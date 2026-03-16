@@ -1,0 +1,35 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"  
+    android:layout_width="match_parent"  
+    android:layout_height="match_parent"  
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/displayCode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Display Code" />
+
+    <TextView
+        android:id="@+id/timerText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Timer" />
+
+    <EditText
+        android:id="@+id/unlockInput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Unlock Code" />
+
+    <Button
+        android:id="@+id/unlockBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Unlock" />
+
+    <TextView
+        android:id="@+id/errorText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Error Message" />
+</LinearLayout>
