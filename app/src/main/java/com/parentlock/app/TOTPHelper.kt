@@ -15,11 +15,11 @@ object TOTPHelper {
     }
 
     fun generateChildCode(secretKey: String, window: Long = getTimeWindow()): String {
-        return (hotp(secretKey, "CHILD:$window") % 10000).toString().padStart(4, '0')
+        return (hotp(secretKey, "CHILD:$window") % 10000L).toString().padStart(4, '0')
     }
 
     fun generateUnlockCode(secretKey: String, window: Long = getTimeWindow()): String {
-        return (hotp(secretKey, "UNLOCK:$window") % 1000000).toString().padStart(6, '0')
+        return (hotp(secretKey, "UNLOCK:$window") % 1000000L).toString().padStart(6, '0')
     }
 
     fun verifyUnlockCode(secretKey: String, input: String): Boolean {
@@ -35,7 +35,7 @@ object TOTPHelper {
         return abs(((hash[offset].toInt() and 0x7f) shl 24) or
                    ((hash[offset+1].toInt() and 0xff) shl 16) or
                    ((hash[offset+2].toInt() and 0xff) shl 8) or
-                   (hash[offset+3].toInt() and 0xff).toLong())
+                   (hash[offset+3].toInt() and 0xff)).toLong()
     }
 
     private fun hexToBytes(hex: String) = ByteArray(hex.length / 2) {

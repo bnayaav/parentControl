@@ -33,7 +33,7 @@ class LockScreenActivity : AppCompatActivity() {
         updateTimer = Timer()
         updateTimer?.scheduleAtFixedRate(object : TimerTask() {
             override fun run() = runOnUiThread {
-                timerText.text = "קוד חדש בעוד "+ ${TOTPHelper.getSecondsRemaining()} + " שניות"
+                timerText.text = "קוד חדש בעוד ${TOTPHelper.getSecondsRemaining()} שניות"
                 val w = TOTPHelper.getTimeWindow()
                 if (w != lastWindow) { lastWindow = w; refresh() }
             }
