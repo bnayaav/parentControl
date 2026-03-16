@@ -1,0 +1,6 @@
+// Other existing codes... 
+
+// Updating the string interpolation on line 36
+val message = "קוד חדש בעוד ${TOTPHelper.getSecondsRemaining()} שניות" 
+
+// Other existing codes...
